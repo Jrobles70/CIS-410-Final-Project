@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class PlayerHeath : MonoBehaviour
 {
     public bool isDead = false;
     public int health = 3;
     public Text gameOverText;
+    public Text scoreText;
 
     private bool invincible = false;
+    private float timer;
 
     void Update()
     {
@@ -21,11 +24,17 @@ public class PlayerHeath : MonoBehaviour
                 Application.LoadLevel(Application.loadedLevel);
             }
         }
+        else
+        {
+            timer += Time.deltaTime;
+            scoreText.text = "" + Math.Round(timer, 2);
+        }
     }
 
     private void Awake()
     {
         HealthManager.health = health;
+        timer = 0.0f;
     }
 
     IEnumerator OnTriggerEnter(Collider collision)
