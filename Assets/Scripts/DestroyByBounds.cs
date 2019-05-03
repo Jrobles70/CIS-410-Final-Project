@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class DestroyByBounds : MonoBehaviour
 {
-	void Start () {
-		Debug.Log ("Destroyed ");
-	}
 	void OnTriggerExit (Collider other) {
 		Destroy (other.gameObject);
 		Debug.Log ("Destroyed " + other.name);
