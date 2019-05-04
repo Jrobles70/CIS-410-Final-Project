@@ -39,7 +39,11 @@ public class PlayerHeath : MonoBehaviour
 
     IEnumerator OnTriggerEnter(Collider collision)
     {
-        if (!invincible & !isDead)
+        bool isEnemy =
+            !collision.gameObject.name.ToLower().Contains("road")
+            &&
+            !collision.gameObject.name.ToLower().Contains("boundary");
+        if (!invincible & !isDead & isEnemy)
         {
             health -= 1;
             HealthManager.health = health;
