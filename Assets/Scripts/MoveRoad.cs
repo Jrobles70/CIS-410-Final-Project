@@ -16,6 +16,13 @@ public class MoveRoad : MonoBehaviour
 		Debug.Log("started moving at velocity: " + speed);
 		collided = false;
 	}
+
+	// void Update () {
+		// if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey("w"))
+		// 	rb.velocity = transform.forward * speed * -2;
+		// rb.velocity = transform.forward * speed * -1;
+	// }
+
 	void OnTriggerExit (Collider other) {
 		Debug.Log (gameObject.tag + " collided with " + other.tag);
 		if (other.tag == "Player" && !collided) {
