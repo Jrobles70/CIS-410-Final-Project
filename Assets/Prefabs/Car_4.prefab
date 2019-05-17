@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 5190206970293489620}
   m_Layer: 0
   m_Name: Car_4
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -448,7 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e2df1fc57074c12896c117041e97fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 500
+  speed: 700
 --- !u!54 &5190206970293489620
 Rigidbody:
   m_ObjectHideFlags: 0
