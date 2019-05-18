@@ -18,8 +18,10 @@ public class PlayerHeath : MonoBehaviour
     {
         if (isDead)
         {
+            GameObject.Find("Scoreboard").SetActive(true);
             if (Input.GetKeyDown(KeyCode.R))
             {
+                GameObject.Find("Scoreboard").SetActive(false);
                 isDead = false;
                 Application.LoadLevel(Application.loadedLevel);
             }
