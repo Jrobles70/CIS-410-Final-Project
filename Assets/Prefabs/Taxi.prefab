@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 7628313706796429476}
   m_Layer: 0
   m_Name: Taxi
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -340,7 +340,7 @@ Transform:
   m_GameObject: {fileID: 696875236641414142}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7.5, y: 7.5, z: 7.5}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 702303447582562592}
   - {fileID: 702275982254994844}
@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e2df1fc57074c12896c117041e97fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 400
+  speed: 600
 --- !u!54 &7628313706796429476
 Rigidbody:
   m_ObjectHideFlags: 0
