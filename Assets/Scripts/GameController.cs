@@ -6,6 +6,7 @@ public class GameController : MonoBehaviour
 {
 
 	public GameObject [] cars;
+	public float [] spawn_pos;
 	public float spawn_wait;
 	public float z_pos;
 	public float x_min, x_max;
@@ -16,10 +17,12 @@ public class GameController : MonoBehaviour
 		while (!gameover) {
 
 			GameObject car;
+			int index = (int) Random.Range (0.0f, 4.0f);
 			car = cars [Random.Range (0, cars.Length)];
-			Vector3 position = new Vector3 (Random.Range (x_min, x_max), 0.0f, z_pos);
+			Vector3 position = new Vector3 (spawn_pos[index], 0.0f, z_pos);
 			Instantiate (car, position, transform.rotation);
 			yield return new WaitForSeconds (spawn_wait);
+			spawn_wait = spawn_wait - 0.001f;
 		}
 
 	}
@@ -45,3 +48,5 @@ public class GameController : MonoBehaviour
 	}
 
 }
+
+
