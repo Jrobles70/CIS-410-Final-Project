@@ -8,8 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public float finalSpeed = 600.0f;
     public float initSpeed = 400.0f;
     public float xMin, xMax;
+    public float yMin = 70.0f, yMax = 120.0f;
     public float origin;
-    private GameObject player;
     private Quaternion target;
     private float smooth = 3.0f;
     private Vector3 initialVelocity;
@@ -24,16 +24,14 @@ public class PlayerMovement : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey("a")){
-            if (new_position.x > xMin)
-                new_position += Vector3.left * speed * Time.deltaTime;
-            if (new_angle.y < 120 && new_position.x > xMin)
+            new_position += Vector3.left * speed * Time.deltaTime;
+            if (new_angle.y < yMax && new_position.x > xMin)
                 new_angle.y -= 0.3f;
         }
         
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey("d")){
-            if (new_position.x < xMax)
-                new_position += Vector3.right * speed * Time.deltaTime;
-            if (new_angle.y > 70 && new_position.x < xMax)
+            new_position += Vector3.right * speed * Time.deltaTime;
+            if (new_angle.y > yMin && new_position.x < xMax)
                 new_angle.y += 0.3f;
         }
 
@@ -81,16 +79,13 @@ public class PlayerMovement : MonoBehaviour
                 Debug.Log ("cannot find 'Mover' script");
         }
 
-        transform.position = new_position;
+        transform.position = new Vector3 (
+        	Mathf.Clamp (new_position.x, xMin, xMax),
+        	transform.position.y, 
+        	transform.position.z
+        );
         transform.eulerAngles = new_angle;
         transform.rotation = Quaternion.Slerp(transform.rotation, target,  Time.deltaTime * smooth);
-        // if (objs.Length > 0) {
-        //     foreach(GameObject go in objs)  {
-        //         MoveRoad level = go.GetComponent<MoveRoad>();
-        //         level.speed = finalSpeed;
-        //         level.SetVelocity(Vector3.Slerp(finalVelocity, initialVelocity, 0.5f));
-        //     }
-        // }
     }
 
     void MoveCamera () {
@@ -128,7 +123,6 @@ public class PlayerMovement : MonoBehaviour
         wait_time = gc.spawn_wait;
         decreased_wait_time = wait_time - 0.25f;
         if (gameObject.tag == "Player"){
-            player = gameObject;
             target = Quaternion.Euler(0.0f, 90.0f, 0.0f);
         }
     }

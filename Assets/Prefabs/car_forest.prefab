@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 7626865025119314502}
   - component: {fileID: 1854935334096128612}
   m_Layer: 0
-  m_Name: car7_interior_4
+  m_Name: car_forest
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e2df1fc57074c12896c117041e97fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 700
+  speed: 800
 --- !u!65 &1854935334096128612
 BoxCollider:
   m_ObjectHideFlags: 0
