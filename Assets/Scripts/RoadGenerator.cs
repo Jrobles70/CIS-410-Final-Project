@@ -27,7 +27,7 @@ public class RoadGenerator : MonoBehaviour
 
 	void OnTriggerEnter (Collider other) {
 		if (other.tag == "GenerateRoad") {
-			Debug.Log (gameObject.name+ " collided with " + other.name);
+			// Debug.Log (gameObject.name+ " collided with " + other.name);
 			if (generate) {
 				GenRoad ();
 			}

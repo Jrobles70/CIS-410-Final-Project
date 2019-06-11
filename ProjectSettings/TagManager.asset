@@ -8,6 +8,8 @@ TagManager:
   - Bounds
   - Enemy
   - Level
+  - Invert
+  - Shield
   layers:
   - Default
   - TransparentFX

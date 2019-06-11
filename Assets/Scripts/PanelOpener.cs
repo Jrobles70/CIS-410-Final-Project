@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PanelOpener : MonoBehaviour
 {
-	public GameObject Panel;
+	public GameObject PanelToBeOpened;
+	public GameObject [] PanelsToBeClosed;
    
   	public void OpenPanel()
    	{
-   		if(Panel != null)
-   			Panel.SetActive(true);
+   		PanelToBeOpened.SetActive (true);
+   		foreach (GameObject Panel in PanelsToBeClosed) {
+   			Panel.SetActive (false);
+   		}
    	}
-    
 }

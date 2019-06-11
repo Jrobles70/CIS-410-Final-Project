@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/River.unity
     guid: 63c413ad0d84f448e9345e198e6fcd72
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 95f980529fd6a4f9fbda4414ef5831e4
   m_configObjects: {}

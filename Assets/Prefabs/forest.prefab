@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2795199965471503951}
   - component: {fileID: 1296931386945498101}
-  - component: {fileID: 7643907739810766868}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -69,17 +68,6 @@ Terrain:
   m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
   m_GroupingID: 0
   m_AllowAutoConnect: 1
---- !u!154 &7643907739810766868
-TerrainCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612627026141724588}
-  m_Material: {fileID: 0}
-  m_Enabled: 1
-  m_TerrainData: {fileID: 15600000, guid: 7a10134472a404fed93adc742ec5e2f8, type: 2}
-  m_EnableTreeColliders: 0
 --- !u!1 &4961502620722980969
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +110,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4961502621023520669
 GameObject:
@@ -183,8 +171,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 400
-  newZ: 1675
-  newRoad: {fileID: 4961502621023520669}
 --- !u!54 &4961502621023520640
 Rigidbody:
   m_ObjectHideFlags: 0

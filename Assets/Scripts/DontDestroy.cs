@@ -1,22 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DontDestroy : MonoBehaviour
 {
-    private void Awake()
+    private string sceneName;
+    static bool AudioBegin = false;
+
+    private void Start()
     {
-        if (GameObject.Find("Scoreboard") != null)
+        if (!AudioBegin)
         {
-            GameObject.Find("DontDestroy");
-            
+            GetComponent<AudioSource>();
+            DontDestroyOnLoad(gameObject);
+            AudioBegin = true;
+            sceneName = SceneManager.GetActiveScene().name;
         }
         else
         {
-            GameObject.Find("Scoreboard").transform.parent = null;
-            DontDestroyOnLoad(this.gameObject);
+            Destroy(gameObject);
         }
+    }
 
-
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().name != sceneName)
+        {
+            Destroy(gameObject);
+            AudioBegin = false;
+        }
     }
 }
